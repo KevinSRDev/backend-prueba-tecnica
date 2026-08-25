@@ -1,0 +1,46 @@
+# =============================================================================
+# docker-compose.yml — Base de datos MySQL del Sistema de Gestión de Vehículos
+# =============================================================================
+#
+# ¿Por qué usamos un volumen BIND (`./db:/docker-entrypoint-initdb.d`) y no un
+# volumen nombrado?
+#
+#   * Reproducibilidad: cualquier desarrollador que clone el repo y ejecute
+#     `docker compose up` obtiene exactamente el mismo esquema y los mismos
+#     datos de ejemplo (los `.sql` se ejecutan en orden alfabético al PRIMER
+#     arranque, cuando el volumen de datos está vacío).
+#   * Trazabilidad: el esquema queda versionado en git como fuente de verdad
+#     (docker-entrypoint-initdb.d ejecuta únicamente .sql y .sh, y los scripts
+#     de `db/` son la única forma documentada de crear la estructura).
+#
+# Nota: el healthcheck usa `$$MYSQL_ROOT_PASSWORD`; el `$$` escapa el dólar en
+# Compose para que el shell DENTRO del contenedor expanda la variable de
+# entorno `MYSQL_ROOT_PASSWORD` definida más abajo.
+# =============================================================================
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: inventario-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      # Contraseña del usuario administrador (root) del servidor MySQL.
+      MYSQL_ROOT_PASSWORD: root_inventario
+      # Base de datos creada automáticamente en el primer arranque.
+      MYSQL_DATABASE: inventario_vehiculos
+      # Usuario de aplicación (el backend se conecta con este usuario).
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: app_pass_123
+    volumes:
+      # Scripts de inicialización: 01-schema.sql y 02-seed.sql.
+      - ./db:/docker-entrypoint-initdb.d
+    healthcheck:
+      # mysqladmin ping: responde "mysqld is alive" cuando la BD acepta
+      # conexiones usando el usuario root con la contraseña de la env var.
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "root",
+        "-p$$MYSQL_ROOT_PASSWORD"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    restart: unless-stopped
