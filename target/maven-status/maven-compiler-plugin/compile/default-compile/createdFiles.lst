@@ -1,0 +1,12 @@
+com/intexus/inventario/model/TipoCombustible.class
+com/intexus/inventario/model/Motocicleta.class
+com/intexus/inventario/exception/VehiculoNotFoundException.class
+com/intexus/inventario/service/VehiculoService.class
+com/intexus/inventario/InventarioApplication.class
+com/intexus/inventario/config/CorsConfig.class
+com/intexus/inventario/model/TipoFreno.class
+com/intexus/inventario/model/Vehiculo.class
+com/intexus/inventario/model/Auto.class
+com/intexus/inventario/controller/VehiculoController.class
+com/intexus/inventario/exception/GlobalExceptionHandler.class
+com/intexus/inventario/repository/VehiculoRepository.class

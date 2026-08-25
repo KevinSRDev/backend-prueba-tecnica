@@ -1,0 +1,29 @@
+{
+  "name": "backend-prueba-tecnica",
+  "version": "1.0.0",
+  "description": "Programación Orientada a Objetos (POO) - Desarrollo Fullstack CRUD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.java\" \"pom.xml\"",
+    "format:check": "prettier --check \"src/**/*.java\" \"pom.xml\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinSRDev/backend-prueba-tecnica.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KevinSRDev/backend-prueba-tecnica/issues"
+  },
+  "homepage": "https://github.com/KevinSRDev/backend-prueba-tecnica#readme",
+  "private": "true",
+  "devDependencies": {
+    "@prettier/plugin-xml": "^3.4.2",
+    "prettier": "^3.9.6",
+    "prettier-plugin-java": "^2.10.3"
+  }
+}

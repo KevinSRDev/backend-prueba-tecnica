@@ -1,0 +1,12 @@
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/InventarioApplication.java
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/config/CorsConfig.java
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/controller/VehiculoController.java
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/exception/GlobalExceptionHandler.java
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/exception/VehiculoNotFoundException.java
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/model/Auto.java
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/model/Motocicleta.java
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/model/TipoCombustible.java
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/model/TipoFreno.java
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/model/Vehiculo.java
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/repository/VehiculoRepository.java
+/home/kevinsrdev/Documentos/Intexus/gestion-inventario/backend-prueba-tecnica/src/main/java/com/intexus/inventario/service/VehiculoService.java
