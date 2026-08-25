@@ -40,19 +40,18 @@ class ValidacionesTest {
   @Test
   @DisplayName("precioBase 0 -> IllegalArgumentException con mensaje no vacío")
   void precioBaseCero_rechazado() {
-    IllegalArgumentException ex =
-      assertThrows(IllegalArgumentException.class, () -> autoBase().setPrecioBase(BigDecimal.ZERO));
+    IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+      autoBase().setPrecioBase(BigDecimal.ZERO)
+    );
     assertTrue(ex.getMessage() != null && !ex.getMessage().isBlank());
   }
 
   @Test
   @DisplayName("precioBase -1 -> IllegalArgumentException con mensaje no vacío")
   void precioBaseNegativo_rechazado() {
-    IllegalArgumentException ex =
-      assertThrows(
-        IllegalArgumentException.class,
-        () -> autoBase().setPrecioBase(new BigDecimal("-1"))
-      );
+    IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+      autoBase().setPrecioBase(new BigDecimal("-1"))
+    );
     assertTrue(ex.getMessage() != null && !ex.getMessage().isBlank());
   }
 
@@ -65,32 +64,36 @@ class ValidacionesTest {
   @Test
   @DisplayName("marca null -> IllegalArgumentException")
   void marcaNula_rechazada() {
-    IllegalArgumentException ex =
-      assertThrows(IllegalArgumentException.class, () -> autoBase().setMarca(null));
+    IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+      autoBase().setMarca(null)
+    );
     assertTrue(!ex.getMessage().isBlank());
   }
 
   @Test
   @DisplayName("anio 1900 (fuera de 1950-2030) -> IllegalArgumentException")
   void anioFueraDeRango_rechazado() {
-    IllegalArgumentException ex =
-      assertThrows(IllegalArgumentException.class, () -> autoBase().setAnio(1900));
+    IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+      autoBase().setAnio(1900)
+    );
     assertTrue(!ex.getMessage().isBlank());
   }
 
   @Test
   @DisplayName("Auto numeroPuertas 1 (fuera de 2-6) -> IllegalArgumentException")
   void numeroPuertasInvalido_rechazado() {
-    IllegalArgumentException ex =
-      assertThrows(IllegalArgumentException.class, () -> autoBase().setNumeroPuertas(1));
+    IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+      autoBase().setNumeroPuertas(1)
+    );
     assertTrue(!ex.getMessage().isBlank());
   }
 
   @Test
   @DisplayName("Moto cilindrada 0 -> IllegalArgumentException")
   void cilindradaCero_rechazada() {
-    IllegalArgumentException ex =
-      assertThrows(IllegalArgumentException.class, () -> motoBase().setCilindrada(0));
+    IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+      motoBase().setCilindrada(0)
+    );
     assertTrue(!ex.getMessage().isBlank());
   }
 
