@@ -1,0 +1,21 @@
+# Maven (compilación y artefactos generados)
+target/
+*.class
+
+# Node (necesario solo para prettier como devDependency; el lockfile se versiona)
+node_modules/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# SO
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
